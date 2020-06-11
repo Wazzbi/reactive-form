@@ -13,7 +13,7 @@
 
     .contacts {
         backdrop-filter: saturate(100%) blur(20px);
-        background-color: rgba(39, 63, 100, 0.25);
+        background-color: rgba(39, 63, 100, 0.7);
         border-radius: 5px 0 0 5px;
         color: white;
         padding: 10px;
@@ -67,10 +67,18 @@
             border: none;
             color: white;
             cursor: pointer;
-            outline-color: white;
-            outline-width: 3px;
+            outline: none;
             padding: 10px;
             width: 100%;
+
+
+            &:active {
+                transform: translateY(2px); 
+            }
+            
+            &:focus {
+                background-color: rgb(78, 130, 212);
+            }
         }
     }
 
