@@ -1,0 +1,26 @@
+<div class="centered wrapper">
+  <div class="contacts">
+    <b>Contact us</b>
+  </div>
+  <div>
+    <div class="form-wrapper" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div>
+        Full Name <br>
+        <input type="text" formControlName="fullName">
+      </div>
+      <div>
+        Email address <br>
+        <input type="text" formControlName="email">
+      </div>
+      <div class="form-message">
+        Message <br>
+        <textarea formControlName="message"></textarea>
+      </div>
+      <div class="form-button">
+        <button (click)="onSubmit()">
+          Send message
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
