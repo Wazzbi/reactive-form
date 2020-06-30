@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormMessageComponent } from './form-message/form-message.component';
+import { DataService } from './services/data.service';
 @NgModule({
    declarations: [
       AppComponent,
@@ -17,7 +18,7 @@ import { FormMessageComponent } from './form-message/form-message.component';
       BrowserAnimationsModule,
       ReactiveFormsModule
    ],
-   providers: [],
+   providers: [DataService],
    bootstrap: [
       AppComponent
    ]

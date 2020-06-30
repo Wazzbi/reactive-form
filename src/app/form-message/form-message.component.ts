@@ -1,5 +1,8 @@
+import { userData } from './../mocks/fake-data';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { DataService } from '../services/data.service';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-form-message',
@@ -9,7 +12,7 @@ import { FormGroup } from '@angular/forms';
 export class FormMessageComponent implements OnInit {
   @Input() form: FormGroup;
 
-  constructor() { }
+  constructor( private dataService: DataService) { }
 
   ngOnInit() {
     this.fillForm();
@@ -20,9 +23,11 @@ export class FormMessageComponent implements OnInit {
   }
 
   fillForm() {
+    const user: User = this.dataService.getUserData2();
+
     this.form.patchValue({
-      fullName: 'David Novotný',
-      email: 'dd47@hey.com',
+      fullName: !!user.username.trim() ? user.username : null,
+      email: !!user.email.trim() ? user.email : null,
       message: 'Reactive form works!'
     });
   }
